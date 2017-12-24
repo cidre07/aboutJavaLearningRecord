@@ -2,16 +2,17 @@
 记录学习java的小笔记<br>
 
 关于类<br>
-1. 类中有成员变量和局部变量<br>
-    1.1 局部变量：在方法中定义的变量<br>
-    1.2 成员变量：分为实例变量和类变量<br>
-        1.2.1 实例变量：没有static这顶帽子的变量<br>
-        1.2.2 类变量： 通过static定义的变量<br>
-        1.2.3 类的一生中，只会有初始化类变量一次，因为一个javaClass对应一个类，而类创建了多少实例，就会有多少实例变量<br>
-        1.2.4 在类初始化时，类变量先于实例变量<br>
-        1.2.5 变量初始化时，不管右边有没有值，先回将变量初始化为0/null/false，然后再赋值<br>
-        1.2.6 一个有趣的例子：<br>
-        ```
+·1. 类中有成员变量和局部变量<br>
+    ·1.1 局部变量：在方法中定义的变量
+    ·1.2 成员变量：分为实例变量和类变量
+       ··· 1.2.1 实例变量：没有static这顶帽子的变量
+       ··· 1.2.2 类变量： 通过static定义的变量
+        ···1.2.3 类的一生中，只会有初始化类变量一次，因为一个javaClass对应一个类，而类创建了多少实例，就会有多少实例变量
+       ··· 1.2.4 在类初始化时，类变量先于实例变量
+       ··· 1.2.5 变量初始化时，不管右边有没有值，先回将变量初始化为0/null/false，然后再赋值
+       ··· 1.2.6 一个有趣的例子
+       
+        ```java
        //我是爹
         public class BaseTest {
             int count = 2;
@@ -19,6 +20,9 @@
                 System.out.println("in BaseTEST" + this.count);
             }
         }
+        ```
+
+```java
         //我是娃
         public class DetrivedTest extends BaseTest {
             int count = 220;
@@ -27,6 +31,8 @@
                 System.out.println("in Detrieved" + this.count);
             }
         }
+        ```
+         ```java
         //我是专门来测试的
         public class FieldAndMethodTest {
             public static void main (String[] args) {
@@ -47,6 +53,8 @@
                 molyCopy.display();
             }
         }
+        ```
+         ```java
         //我是他们的输出
         FieldAndMethodTest -b2
         in BaseTEST2
